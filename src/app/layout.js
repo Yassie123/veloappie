@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Barriecito } from 'next/font/google';
 import Link from 'next/link';
 
 import './globals.css';
@@ -12,6 +12,10 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 });
+const barriecito = Barriecito({
+  variable: '--font-barriecito',
+  weight: ['400'],
+});
 
 export const metadata = {
   title: 'Create Next App',
@@ -21,7 +25,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable}  ${barriecito.variable}`}
+      >
         <nav>
           <Link href="/">Home</Link>
         </nav>
