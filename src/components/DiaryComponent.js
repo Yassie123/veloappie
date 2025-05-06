@@ -21,7 +21,7 @@ export default function DiaryComponent({ station }) {
       <div className={styles.stationHeader}>
         <h2 className={styles.stationName}>{station.name}</h2>
         <span className={styles.stationDistance}>
-          {station.distance.toFixed(2)} km
+          {station.distance.toFixed(2)} km van jou
         </span>
       </div>
       <div className={styles.stationStats}>

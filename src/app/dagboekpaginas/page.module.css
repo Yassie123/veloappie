@@ -8,16 +8,16 @@
 .slider {
   width: 50%;
   margin: 0 auto;
+  height: 100vh;
 }
 .sliderItem {
   width: 100%; /* Make sure each item uses the slider's full width */
 }
 
 .title {
-  font-size: 24px;
   margin-bottom: 20px;
   font-family: 'barriecito', sans-serif;
-  font-size: 5rem;
+  font-size: 4rem;
   color: #8aafdb;
 }
 
