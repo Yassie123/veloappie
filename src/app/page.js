@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.diaryCover}>
-        {/* The cover design is applied via CSS */}
+        <img src="/cover_1.svg" alt="Cover" className={styles.coverImage} />
         <Link href="/dagboekpaginas">
           <button className={styles.diaryButton}>Lees het dagboek</button>
         </Link>
