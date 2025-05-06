@@ -1,0 +1,64 @@
+.title {
+  color: green;
+}
+.title {
+  color: green;
+  margin-bottom: 1rem;
+}
+
+.stationContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.stationInfo {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.stationDetails {
+  margin-bottom: 1rem;
+}
+
+.stationStat {
+  margin: 0.5rem 0;
+}
+
+.statLabel {
+  font-weight: 500;
+}
+
+.readButton {
+  width: 100%;
+  background-color: #d97706;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.readButton:hover {
+  background-color: #b45309;
+}
+
+.diaryText {
+  padding: 1rem;
+  background-color: #fef3c7;
+  border-radius: 0.25rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.imageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
