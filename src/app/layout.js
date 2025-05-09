@@ -1,5 +1,5 @@
 import { Geist, Geist_Mono, Barriecito, Tangerine } from 'next/font/google';
-import Link from 'next/link';
+import Navbar from '@/components/navbar';
 
 import './globals.css';
 
@@ -32,9 +32,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable}  ${barriecito.variable} ${tangerine.variable}`}
       >
-        <nav>
-          <Link href="/">Home</Link>
-        </nav>
+        <Navbar />
         <main>{children}</main>
       </body>
     </html>
