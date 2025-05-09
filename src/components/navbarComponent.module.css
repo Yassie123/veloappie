@@ -47,32 +47,3 @@
 .logoImage {
   object-fit: contain;
 }
-
-.logoText {
-  font-family: 'barriecito', Courier, monospace;
-  font-size: 1.5rem;
-  color: #133c6d;
-  font-weight: bold;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .container {
-    height: 50px;
-  }
-
-  .logoImage {
-    width: 40px;
-    height: 40px;
-  }
-
-  .logoText {
-    font-size: 1.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .logoText {
-    font-size: 1.125rem;
-  }
-}
