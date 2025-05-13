@@ -15,11 +15,13 @@ const geistMono = Geist_Mono({
 const barriecito = Barriecito({
   variable: '--font-barriecito',
   weight: ['400'],
+  subsets: ['latin'],
 });
 
 const tangerine = Tangerine({
   variable: '--font-lavishly-yours',
   weight: ['400'],
+  subsets: ['latin'],
 });
 export const metadata = {
   title: 'Create Next App',
