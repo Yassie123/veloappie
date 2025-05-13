@@ -16,12 +16,14 @@ const barriecito = Barriecito({
   variable: '--font-barriecito',
   weight: ['400'],
   subsets: ['latin'],
+  preload: false,
 });
 
 const tangerine = Tangerine({
   variable: '--font-lavishly-yours',
   weight: ['400'],
   subsets: ['latin'],
+  preload: false,
 });
 export const metadata = {
   title: 'Create Next App',
