@@ -43,7 +43,7 @@ export default function DiaryComponent({ station }) {
       </div>
       <button onClick={handleReadDiary} className={styles.readButton}>
         {showDiaryText
-          ? 'Verberg dagboektekst'
+          ? 'Verberg de dagboektekst'
           : 'Lees hoe dit station zich voelt'}
       </button>
 
