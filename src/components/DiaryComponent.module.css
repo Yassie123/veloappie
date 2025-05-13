@@ -104,3 +104,11 @@
     align-items: flex-start;
   }
 }
+.mapillarySection {
+  width: 100%;
+  height: 1vh;
+}
+
+.mapillaryImage {
+  width: 100%;
+}
