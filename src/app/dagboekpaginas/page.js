@@ -70,4 +70,12 @@ export default function Dagboekpaginas() {
       </div>
     </div>
   );
+  //<Slider {...sliderSettings}>
+  //      {nearestStations.map((station) => (
+  //         <div key={station.id} className={styles.sliderItem}>
+  //          <DiaryComponent station={station} />
+  //      </div>
+  //    ))}
+  //   </Slider>
 }
+//
