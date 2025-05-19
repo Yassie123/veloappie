@@ -1,7 +1,7 @@
 .stationEntry {
   background-image: url('/blad.jpeg');
   height: auto;
-  min-height: 55vh;
+  max-height: 55vh;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;

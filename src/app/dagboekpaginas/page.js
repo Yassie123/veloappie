@@ -62,13 +62,11 @@ export default function Dagboekpaginas() {
     <div className={styles.container}>
       <h1 className={styles.title}>Dagboekpaginas</h1>
       <div className={styles.slider}>
-        <Slider {...sliderSettings}>
-          {nearestStations.map((station) => (
-            <div key={station.id} className={styles.sliderItem}>
-              <DiaryComponent station={station} />
-            </div>
-          ))}
-        </Slider>
+        {nearestStations.map((station) => (
+          <div key={station.id} className={styles.sliderItem}>
+            <DiaryComponent station={station} />
+          </div>
+        ))}
       </div>
     </div>
   );

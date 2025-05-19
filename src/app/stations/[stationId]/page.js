@@ -26,10 +26,6 @@ export default function Station() {
   const totalSlots = station.empty_slots + station.free_bikes;
   const isHappy = station.free_bikes > totalSlots / 2;
 
-  const handleReadDiary = () => {
-    setShowDiaryText(!showDiaryText);
-  };
-
   return (
     <div className={styles.stationContainer}>
       <div className={styles.stationInfo}>
