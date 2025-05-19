@@ -3,7 +3,6 @@
 import styles from './page.module.css';
 import useNetwork from '@/data/network';
 import { useParams } from 'next/navigation';
-import StationImage from '@/components/StationImage';
 import { useState } from 'react';
 import { getDiaryText } from '@/data/diaryTexts';
 
@@ -33,9 +32,8 @@ export default function Station() {
 
   return (
     <div className={styles.stationContainer}>
-      <h1 className={styles.title}>{station.name}</h1>
-
       <div className={styles.stationInfo}>
+        <h1 className={styles.title}>{station.name}</h1>
         <div className={styles.stationDetails}>
           <p className={styles.stationStat}>
             <span className={styles.statLabel}>Beschikbare fietsen:</span>{' '}
@@ -46,22 +44,16 @@ export default function Station() {
             {station.empty_slots}
           </p>
         </div>
-
-        <button onClick={handleReadDiary} className={styles.readButton}>
-          {showDiaryText
-            ? 'Verberg dagboektekst'
-            : 'Lees hoe dit station zich voelt'}
-        </button>
-
-        {showDiaryText && (
-          <div className={styles.diaryText}>
-            <p>{getDiaryText(station.name, isHappy)}</p>
-          </div>
-        )}
-      </div>
-
-      <div className={styles.imageContainer}>
-        <StationImage station={station} />
+        <div className={styles.emotionImage}>
+          <img
+            src={isHappy ? '/happyfiets.png' : '/sadfiets.png'}
+            alt={isHappy ? 'Happy emotion' : 'Sad emotion'}
+            className={styles.moodImage}
+          />
+        </div>
+        <div className={styles.diaryText}>
+          <p>{getDiaryText(station.name, isHappy)}</p>
+        </div>
       </div>
     </div>
   );
