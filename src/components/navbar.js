@@ -13,7 +13,7 @@ export default function Navbar() {
           <Link href="/" className={styles.logoLink}>
             <div className={styles.logo}>
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Fiets Dagboek Logo"
                 width={50}
                 height={50}
