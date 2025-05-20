@@ -5,7 +5,7 @@ import useNetwork from '@/data/network';
 import { useParams } from 'next/navigation';
 import { useState } from 'react';
 import { getDiaryText } from '@/data/diaryTexts';
-
+import Link from 'next/link';
 export default function Station() {
   const { network, isLoading, isError } = useNetwork();
   const params = useParams();
@@ -28,6 +28,9 @@ export default function Station() {
 
   return (
     <div className={styles.stationContainer}>
+      <Link href="/dagboekpaginas">
+        <p className={styles.backButton}>terug</p>
+      </Link>
       <div className={styles.stationInfo}>
         <h1 className={styles.title}>{station.name}</h1>
         <div className={styles.stationDetails}>
