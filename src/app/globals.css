@@ -8,7 +8,6 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  overflow-y: hidden;
   background-size: cover;
   background-image: url('/achtergrond3.png');
   background-position: center;

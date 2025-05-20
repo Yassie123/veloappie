@@ -28,73 +28,23 @@
   font-family: 'barriecito', Courier, monospace;
   color: #133c6d;
 }
-
+.lijn {
+  text-decoration: none;
+  border-bottom: 1px solid #133b6d00;
+  transition: border-bottom 0.3s ease;
+}
+.lijn:hover {
+  border-bottom: 2px solid #133c6d;
+}
 .stationDistance {
   font-size: 0.875rem;
   color: #6b7280;
   font-family: 'geistMono', Courier, monospace;
 }
 
-.stationStats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  color: #b398a6;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  font-family: 'geistMono', Courier, monospace;
-}
-
-.statItem {
-  font-size: 0.875rem;
-}
-
-.statLabel {
-  font-weight: 500;
-}
-
-.diaryButton {
-  width: 100%;
-  background-color: #8aafdb;
-  color: white;
-  padding: 0.75rem;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  transition: background-color 0.2s;
-  border: none;
-  cursor: pointer;
-  font-family: 'barriecito', Courier, monospace;
-}
-
-.readButton:hover {
-  background-color: #6588b4;
-}
-
-.diaryText {
-  margin-top: 0.75rem;
-  padding: 0.75rem;
-  background-color: #fef3c7;
-  color: #0f036b;
-  border-radius: 0.25rem;
-  font-style: italic;
-  font-size: 1rem;
-  line-height: 2rem;
-  min-height: 10vh;
-  max-height: none;
-  text-align: center;
-  font-family: 'geistMono', Courier, monospace;
-  overflow-y: auto;
-  word-wrap: break-word;
-}
-
 @media (max-width: 768px) {
   .stationEntry {
     padding: 0.75rem;
-  }
-
-  .stationStats {
-    flex-direction: column;
-    gap: 0.25rem;
   }
 }
 
@@ -103,14 +53,4 @@
     flex-direction: column;
     align-items: flex-start;
   }
-}
-.emotionImage {
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-.moodImage {
-  width: 100%;
-  max-height: 150px;
-  object-fit: cover;
 }

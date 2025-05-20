@@ -11,7 +11,10 @@ export default function DiaryComponent({ station }) {
   return (
     <div className={styles.stationEntry}>
       <div className={styles.stationHeader}>
-        <Link href={`/stations/${station.id}?showDiary=true`}>
+        <Link
+          className={styles.lijn}
+          href={`/stations/${station.id}?showDiary=true`}
+        >
           <h2 className={styles.stationName}>{station.name}</h2>
         </Link>
 

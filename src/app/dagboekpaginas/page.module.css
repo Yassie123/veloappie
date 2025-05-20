@@ -7,12 +7,12 @@
   justify-content: center;
   padding: 0 1rem;
   box-sizing: border-box;
+  margin-top: 100px;
 }
 .slider {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  min-height: 100vh;
 }
 .sliderItem {
   width: 100%;
