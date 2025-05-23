@@ -46,3 +46,9 @@
   display: grid;
   gap: 1rem;
 }
+
+@media (max-width: 768px) {
+  .coverImage {
+    height: 60vh;
+  }
+}
