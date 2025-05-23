@@ -119,6 +119,21 @@ export default function Station() {
           </div>
         )}
       </div>
+      <div className={styles.heartsContainer}>
+        {hearts.map((heart) => (
+          <div
+            key={heart.id}
+            className={styles.flyingHeart}
+            style={{
+              left: `${heart.x}%`,
+              transform: `rotate(${heart.rotation}deg)`,
+              animationDuration: `${heart.speed}s`,
+            }}
+          >
+            ❤️
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
