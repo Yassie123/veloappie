@@ -33,8 +33,11 @@
   border-bottom: 1px solid #133b6d00;
   transition: border-bottom 0.3s ease;
 }
+.stationName:hover {
+  color: #b398a6;
+}
 .lijn:hover {
-  border-bottom: 2px solid #133c6d;
+  border-bottom: 2px solid #b398a6;
 }
 .stationDistance {
   font-size: 0.875rem;

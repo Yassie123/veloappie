@@ -75,17 +75,18 @@ export default function Station() {
 
   return (
     <div className={styles.stationContainer}>
-      <Link href="/dagboekpaginas">
-        <p className={styles.backButton}>terug</p>
-      </Link>
       <div className={styles.stationInfo}>
-        <h1 className={styles.title}>{station.name}</h1>
+        <div className={styles.titleContainer}>
+          <Link className={styles.terug} href="/dagboekpaginas">
+            <p className={styles.backButton}>⬅ Terug</p>
+          </Link>
+          <h1 className={styles.title}>{station.name}</h1>
+        </div>
         <div className={styles.stationDetails}>
           <p className={styles.stationStat}>
             <span className={styles.statLabel}>Beschikbare fietsen:</span>{' '}
             {station.free_bikes}
           </p>
-          <img src="/postit.png" alt="postit" className={styles.postit}></img>
           <p className={styles.stationStat}>
             <span className={styles.statLabel}>Lege plekken:</span>{' '}
             {station.empty_slots}
@@ -105,33 +106,16 @@ export default function Station() {
 
         {!isHappy && (
           <div className={styles.loveSection}>
-            <h2 className={styles.loveTitle}>
-              Geef dit verdrietig station wat liefde
-            </h2>
-            <div className={styles.heartsContainer}>
-              {hearts.map((heart) => (
-                <div
-                  key={heart.id}
-                  className={styles.flyingHeart}
-                  style={{
-                    left: `${heart.x}%`,
-                    animationDuration: `${2000 / heart.speed}ms`,
-                  }}
-                >
-                  ❤️
-                </div>
-              ))}
+            <img src="/postit2.png" alt="postit" className={styles.postit} />
+            <div className={styles.loveContent}>
+              <div className={styles.loveCounter}>
+                <span className={styles.loveCount}>{stationLove}</span> keer
+                liefde getoond
+              </div>
+              <button className={styles.loveButton} onClick={giveLove}>
+                ❤️ Toon liefde
+              </button>
             </div>
-            {/* Love counter */}
-            <div className={styles.loveCounter}>
-              <span className={styles.loveCount}>{stationLove}</span> keer
-              liefde getoond
-            </div>
-
-            {/* Love button */}
-            <button className={styles.loveButton} onClick={giveLove}>
-              ❤️ Toon liefde
-            </button>
           </div>
         )}
       </div>
