@@ -12,7 +12,9 @@ export default function Station() {
   const params = useParams();
   const [showDiaryText, setShowDiaryText] = useState(false);
   const [stationLove, setStationLove] = useState(0);
+  const [stationCelebration, setStationCelebration] = useState(0);
   const [hearts, setHearts] = useState([]);
+  const [confetti, setConfetti] = useState([]);
 
   useEffect(() => {
     // Only run on client side
@@ -23,6 +25,14 @@ export default function Station() {
       );
       if (savedLove) {
         setStationLove(parseInt(savedLove, 10));
+      }
+
+      // Load celebration count from localStorage
+      const savedCelebration = localStorage.getItem(
+        `station_celebration_${params.stationId}`
+      );
+      if (savedCelebration) {
+        setStationCelebration(parseInt(savedCelebration, 10));
       }
     }
   }, [params.stationId]);
@@ -42,7 +52,7 @@ export default function Station() {
   const totalSlots = station.empty_slots + station.free_bikes;
   const isHappy = station.free_bikes > totalSlots / 2;
 
-  // Function to give love to the station
+  // Function to give love to the station (for sad stations)
   const giveLove = () => {
     const newLoveCount = stationLove + 1;
     setStationLove(newLoveCount);
@@ -58,6 +68,7 @@ export default function Station() {
       id: Date.now(),
       x: Math.random() * 80 + 10, // Random x position (10% to 90%)
       speed: Math.random() * 2 + 3, // Random speed
+      rotation: Math.random() * 360, // Random rotation
     };
 
     setHearts((prevHearts) => [...prevHearts, newHeart]);
@@ -70,8 +81,36 @@ export default function Station() {
     }, 2000);
   };
 
-  // Calculate the love meter percentage
-  const loveMeterPercentage = Math.min(100, (stationLove / 10) * 100);
+  // Function to send confetti to the station (for happy stations)
+  const sendConfetti = () => {
+    const newCelebrationCount = stationCelebration + 1;
+    setStationCelebration(newCelebrationCount);
+
+    // Save to localStorage
+    localStorage.setItem(
+      `station_celebration_${params.stationId}`,
+      newCelebrationCount.toString()
+    );
+
+    // Create a new confetti for animation (same pattern as hearts)
+    const newConfetti = {
+      id: Date.now(),
+      x: Math.random() * 80 + 10, // Random x position (10% to 90%)
+      speed: Math.random() * 2 + 3, // Random speed
+      rotation: Math.random() * 360, // Random rotation
+    };
+
+    setConfetti((prevConfetti) => [...prevConfetti, newConfetti]);
+
+    // Remove confetti after animation completes
+    setTimeout(() => {
+      setConfetti((prevConfetti) =>
+        prevConfetti.filter(
+          (confettiPiece) => confettiPiece.id !== newConfetti.id
+        )
+      );
+    }, 2000);
+  };
 
   return (
     <div className={styles.stationContainer}>
@@ -118,7 +157,24 @@ export default function Station() {
             </div>
           </div>
         )}
+
+        {isHappy && (
+          <div className={styles.loveSection}>
+            <img src="/postit3.png" alt="postit" className={styles.postit} />
+            <div className={styles.loveContent}>
+              <div className={styles.loveCounter}>
+                <span className={styles.loveCount}>{stationCelebration}</span>{' '}
+                keer gevierd
+              </div>
+              <button className={styles.loveButton} onClick={sendConfetti}>
+                🎉 Vier mee
+              </button>
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* Hearts container for sad stations */}
       <div className={styles.heartsContainer}>
         {hearts.map((heart) => (
           <div
@@ -131,6 +187,23 @@ export default function Station() {
             }}
           >
             ❤️
+          </div>
+        ))}
+      </div>
+
+      {/* Confetti container for happy stations */}
+      <div className={styles.confettiContainer}>
+        {confetti.map((confettiPiece) => (
+          <div
+            key={confettiPiece.id}
+            className={styles.flyingConfetti}
+            style={{
+              left: `${confettiPiece.x}%`,
+              transform: `rotate(${confettiPiece.rotation}deg)`,
+              animationDuration: `${confettiPiece.speed}s`,
+            }}
+          >
+            🎉
           </div>
         ))}
       </div>
