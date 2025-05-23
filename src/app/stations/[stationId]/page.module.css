@@ -193,7 +193,7 @@
 @media (max-width: 768px) {
   .postit {
     width: 70%;
-    margin-top: 100px;
+    margin-top: 70px;
   }
   .loveSection {
     flex-direction: column;
