@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import useNetwork from '@/data/network';
 import { getDistance } from '@/helpers/get-distance';
 import DiaryComponent from '@/components/DiaryComponent';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -49,33 +48,16 @@ export default function Dagboekpaginas() {
   const nearestStations = stations
     .sort((a, b) => a.distance - b.distance)
     .slice(0, 5);
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <div className={styles.arrowRight}>→</div>,
-    prevArrow: <div className={styles.arrowLeft}>←</div>,
-  };
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Dagboekpaginas</h1>
-      <div className={styles.slider}>
+      <div className={styles.list}>
         {nearestStations.map((station) => (
-          <div key={station.id} className={styles.sliderItem}>
+          <div key={station.id} className={styles.listItem}>
             <DiaryComponent station={station} />
           </div>
         ))}
       </div>
     </div>
   );
-  //<Slider {...sliderSettings}>
-  //      {nearestStations.map((station) => (
-  //         <div key={station.id} className={styles.sliderItem}>
-  //          <DiaryComponent station={station} />
-  //      </div>
-  //    ))}
-  //   </Slider>
 }
-//

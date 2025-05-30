@@ -1,3 +1,4 @@
+/*daboek cover*/
 .container {
   display: flex;
   flex-direction: column;
@@ -35,16 +36,6 @@
 
 .diaryButton:hover {
   background-color: #907482;
-}
-
-.diaryEntriesContainer {
-  width: 100%;
-  max-width: 800px;
-}
-
-.stationsList {
-  display: grid;
-  gap: 1rem;
 }
 
 @media (max-width: 768px) {

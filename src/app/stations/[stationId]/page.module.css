@@ -1,3 +1,4 @@
+/*dagbboekpagina*/
 .stationContainer {
   max-width: 800px;
   margin: 0 auto;
@@ -21,6 +22,27 @@
   flex-direction: column;
 }
 
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.terug {
+  text-decoration: none;
+}
+.backButton {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #133c6d;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-family: 'barriecito', Courier, monospace;
+}
+
+.backButton:hover {
+  color: #8aafdb;
+}
 .title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -54,12 +76,6 @@
   word-wrap: break-word;
 }
 
-@media (max-width: 768px) {
-  .stationDetails {
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-}
 .emotionImage {
   width: 100%;
   margin-bottom: 15px;
@@ -70,8 +86,7 @@
   max-height: 200px;
   object-fit: cover;
 }
-/* Add these to your existing CSS */
-
+/*liefde geven*/
 .loveSection {
   margin-top: 2rem;
   display: flex;
@@ -131,7 +146,7 @@
   transform: scale(0.95);
 }
 
-/* Flying heart animation */
+/* hartjes + confetti */
 .heartsContainer,
 .confettieContainer {
   position: absolute;
@@ -171,27 +186,6 @@
   }
 }
 
-.titleContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.terug {
-  text-decoration: none;
-}
-.backButton {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #133c6d;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  font-family: 'barriecito', Courier, monospace;
-}
-
-.backButton:hover {
-  color: #8aafdb;
-}
-
 @media (max-width: 768px) {
   .postit {
     width: 70%;
@@ -203,5 +197,9 @@
   }
   .stationInfo {
     height: auto;
+  }
+  .stationDetails {
+    flex-direction: column;
+    gap: 0.25rem;
   }
 }

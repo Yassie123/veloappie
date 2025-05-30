@@ -10,7 +10,6 @@ import Link from 'next/link';
 export default function Station() {
   const { network, isLoading, isError } = useNetwork();
   const params = useParams();
-  const [showDiaryText, setShowDiaryText] = useState(false);
   const [stationLove, setStationLove] = useState(0);
   const [stationCelebration, setStationCelebration] = useState(0);
   const [hearts, setHearts] = useState([]);

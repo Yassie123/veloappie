@@ -4,10 +4,6 @@ import styles from './DiaryComponent.module.css';
 import Link from 'next/link';
 
 export default function DiaryComponent({ station }) {
-  // Calculate if the station is happy or sad based on available bikes
-  // If more than half of the slots have bikes, the station is happy
-  const totalSlots = station.empty_slots + station.free_bikes;
-
   return (
     <div className={styles.stationEntry}>
       <div className={styles.stationHeader}>
